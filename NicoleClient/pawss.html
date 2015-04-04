@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
 <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
 <!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
@@ -50,9 +50,9 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <!--<script src="respond.min.js"></script>-->
-<script src="jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!--<script src="masonry.pkgd.min.js"></script>-->
-<script src="main.js"></script>
+<!--<script src="main.js"></script>-->
 </head>
 <body bgcolor="#FFFFFF" text="#000000" alink="#000000">
 <BR>
@@ -64,104 +64,97 @@ Do the following if you're using your customized build of modernizr (http://www.
 <BR>
 <BR>
 <div id="container">
-<div class="imagecontainer">
-	<a href="">
-    <img class="item" src="http://i.imgur.com/R3Slfl4.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-<div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/dhS7AeF.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
- <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/5BR02yr.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
- <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/DKtYn19.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-  <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/vRo5SgW.jpg" alt=""/>
-	<div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-  <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/Hs1a7Fh.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-  <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/0ywQE7b.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-  <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/tsWGUku.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-  <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/R3Slfl4.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-  <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/vRo5SgW.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-   <div class="imagecontainer">
-	<a href="">
- 	<img class="item" src="http://i.imgur.com/FP7jxak.jpg" alt=""/>
-    <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
-
- <div class="imagecontainer">
-	<a href="">
-	 <img class="item" src="http://i.imgur.com/mww6UBr.jpg" alt=""/>
-     <div class="more-info"><h3>Adopt me</h3></div>
-    </a>
- </div>
 
 </div><br>
 
 
+    <button>Get JSON data</button>
+
+    <div id="placehere"></div>
+
+
 <div id="placehere"></div>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $.getJSON("/pets", function(result){
-        	
-            $.each(result, function(i, pet){
-                //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
-                var elem = document.createElement("img");
-                //elem.setAttribute("src", pet.imageUrl);
-				elem.src = pet.imageUrl;
-                elem.title = pet.name;
+    <script>
+        $(document).ready(function () {
+         //   $("button").click(function () {
+                /* $.getJSON("/pets", function(result){
 
-				//var src = $(document).getElementById("header");
-				//src.appendChild(img);
+                     $.each(result, function(i, pet){
+                         //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
+                         var elem = document.createElement("img");
+                         //elem.setAttribute("src", pet.imageUrl);
+                         elem.src = pet.imageUrl;
+                         elem.title = pet.name;
 
-				document.getElementById("placehere").appendChild(elem);
+                         //var src = $(document).getElementById("header");
+                         //src.appendChild(img);
+
+                         document.getElementById("placehere").appendChild(elem);
+                     });
+                 });*/
+                var result = {
+                    "mockdata": {
+                        "pets": [
+                          {
+                              "id": 1,
+                              "name": "Fluffy",
+                              "url": "http://i.imgur.com/dhS7AeF.jpg"
+                          },
+                          {
+                              "id": 2,
+                              "name": "Spot",
+                              "url": "http://i.imgur.com/5BR02yr.jpg"
+                          },
+                          {
+                              "id": 3,
+                              "name": "Fufu",
+                              "url": "http://i.imgur.com/2iqv3ar.jpg"
+                          },
+                          {
+                              "id": 4,
+                              "name": "Frodo",
+                              "url": "http://i.imgur.com/R3Slfl4.jpg"
+                          },
+                          {
+                              "id": 6,
+                              "name": "Rover",
+                              "url": "http://i.imgur.com/67vn5Rv.jpg"
+                          },
+                          {
+                              "id": 7,
+                              "name": "Bob",
+                              "url": "http://i.imgur.com/5BR02yr.jpg"
+                          },
+                          {
+                              "id": 8,
+                              "name": "Chuck",
+                              "url": "http://i.imgur.com/qG3bN8r.jpg"
+                          },
+                          {
+                              "id": 9,
+                              "name": "Steve",
+                              "url": "http://i.imgur.com/FWOIuYp.jpg"
+                          },
+                          {
+                              "id": 10,
+                              "name": "Spot",
+                              "url": "http://i.imgur.com/Hs1a7Fh.jpg"
+                          }
+                        ]
+                    }
+                };
+
+                $.each(result.mockdata.pets, function (key, pet) {
+                    console.log(key, pet);
+                    var elem = document.createElement("img");
+                    elem.setAttribute("src", pet.url);
+
+                    $('#container').append("<div class=\"imagecontainer\"><a href=\"\"><img class=\"item\" src="+ pet.url + "/><div class=\"more-info\"><h3>" + pet.name + "</h3></div></a></div>'");
+        //        });
+
+
             });
         });
-    });
-});
-</script>
+    </script>
 </body>
 </html>
