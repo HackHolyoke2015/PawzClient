@@ -21,8 +21,10 @@ function getQueryVariable(variable) {
 
 $(document).ready(function(){
     $("button").click(function(){
+        console.log("Clicked");
         $.getJSON("/pet/:" + query, function(result){
-            
+            console.log("Getting JSON");
+            console.log(result);
             $.each(result, function(i, pet){
                 //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
                 var elem = document.createElement("img");
