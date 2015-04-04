@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.getJSON("/pets", function(result){
+       /* $.getJSON("/pets", function(result){
         	
             $.each(result, function(i, pet){
                 //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
@@ -19,8 +19,80 @@ $(document).ready(function(){
 
 				document.getElementById("placehere").appendChild(elem);
             });
-        });
-    });
+        });*/
+        var result = {
+            "mockdata": {
+                "pets": [
+                  {
+                      "id": 1,
+                      "name": "Fluffy",
+                      "url": "http://i.imgur.com/dhS7AeF.jpg"
+                  },
+                  {
+                      "id": 2,
+                      "name": "Spot",
+                      "url": "http://i.imgur.com/5BR02yr.jpg"
+                  },
+                  {
+                      "id": 3,
+                      "name": "Fufu",
+                      "url": "http://i.imgur.com/2iqv3ar.jpg"
+                  },
+                  {
+                      "id": 4,
+                      "name": "Frodo",
+                      "url": "http://i.imgur.com/R3Slfl4.jpg"
+                  },
+                  {
+                      "id": 5,
+                      "name": "Froyo",
+                      "url": "http://i.imgur.com/eedEjWE.jpg"
+                  },
+                  {
+                      "id": 6,
+                      "name": "Rover",
+                      "url": "http://i.imgur.com/67vn5Rv.jpg"
+                  },
+                  {
+                      "id": 7,
+                      "name": "Bob",
+                      "url": "http://i.imgur.com/5BR02yr.jpg"
+                  },
+                  {
+                      "id": 8,
+                      "name": "Chuck",
+                      "url": "http://i.imgur.com/qG3bN8r.jpg"
+                  },
+                  {
+                      "id": 9,
+                      "name": "Steve",
+                      "url": "http://i.imgur.com/FWOIuYp.jpg"
+                  },
+                  {
+                      "id": 10,
+                      "name": "Spot",
+                      "url": "http://i.imgur.com/Hs1a7Fh.jpg"
+                  }
+                ]
+            }
+        };
+
+
+        $.each(result.mockdata.pets, function (key, pet) {
+            console.log(key, pet);
+                   var elem = document.createElement("img");
+            elem.setAttribute("src", pet.url);
+               //   elem.src = pets[i].url;
+                //  elem.title = pets[i].name;
+
+                  //var src = $(document).getElementById("header");
+                  //src.appendChild(img);
+
+                  document.getElementById("placehere").appendChild(elem);
+              });
+
+
+    }); 
 });
 </script>
 </head>
