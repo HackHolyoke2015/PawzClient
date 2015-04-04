@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("/images", function(result){
+        	
+            $.each(result, function(i, pet){
+                //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
+                var elem = document.createElement("img");
+                //elem.setAttribute("src", pet.imageUrl);
+				elem.src = pet.imageUrl;
+
+				//var src = $(document).getElementById("header");
+				//src.appendChild(img);
+
+				document.getElementById("placehere").appendChild(elem);
+            });
+        });
+    });
+});
+</script>
+</head>
+<body>
+
+<button>Get JSON data</button>
+
+<div id="placehere"></div>
+
+</body>
+</html>
