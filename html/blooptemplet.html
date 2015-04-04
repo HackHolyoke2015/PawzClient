@@ -43,8 +43,24 @@ function getQueryVariable(variable) {
 }
 
  $.getJSON("/pet/:" + query, function (result) {
+    console.log("Getting JSON");
     console.log(result);
-    var details = '<div class="imagecontainer"><h1> Hello, I\'m' + pet.name + '!</h1><a href=\"#\" class=\"adoptme\">Adopt Me!</a><img class=\"item\" src="' + pet.imageUrl + '"/>'
+    var mypet;
+    $.each(result, function(i, pet){
+        mypet = pet;
+        //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
+        //var elem = document.createElement("img");
+        //elem.setAttribute("src", pet.imageUrl);
+        //elem.src = pet.imageUrl;
+       // elem.title = pet.name;
+
+        //var src = $(document).getElementById("header");
+        //src.appendChild(img);
+
+        //document.getElementById("placehere").appendChild(elem);
+    });
+
+    var details = '<div class="imagecontainer"><h1> Hello, I\'m' + mypet.name + '!</h1><a href=\"#\" class=\"adoptme\">Adopt Me!</a><img class=\"item\" src="' + mypet.imageUrl + '"/>'
     details += '<BR><h2>West Haven Animal Shelter, 29 Forest Road, West Haven, CT, 06467</h2>';
     details += '<BR> <strong>Name:</strong> Bloop ';
     details += '<BR><strong>Time in Shelter:</strong> 1 year ';
