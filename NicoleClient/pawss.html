@@ -138,6 +138,30 @@ Do the following if you're using your customized build of modernizr (http://www.
     </a>
  </div>
 
-</div>
+</div><br>
+
+
+<div id="placehere"></div>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("/pets", function(result){
+        	
+            $.each(result, function(i, pet){
+                //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
+                var elem = document.createElement("img");
+                //elem.setAttribute("src", pet.imageUrl);
+				elem.src = pet.imageUrl;
+                elem.title = pet.name;
+
+				//var src = $(document).getElementById("header");
+				//src.appendChild(img);
+
+				document.getElementById("placehere").appendChild(elem);
+            });
+        });
+    });
+});
+</script>
 </body>
 </html>
