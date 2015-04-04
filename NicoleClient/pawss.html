@@ -96,7 +96,7 @@ body {
     $.getJSON("/pets", function(result){
         $.each(result, function (key, pet) {
             console.log(key, pet);
-            var route = "/" + pet.name;
+            var route = "/petDetails?id=" + pet.name;
             $('#container').append("<div class=\"imagecontainer\"><a href=" + route + "><img class=\"item\" src=" + pet.imageUrl + "/><div class=\"more-info\"><h3>" + pet.name + "</h3></div></a></div>'");
         });
 
