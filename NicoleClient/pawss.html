@@ -78,8 +78,8 @@ Do the following if you're using your customized build of modernizr (http://www.
     $.getJSON("/pets", function(result){
         $.each(result, function (key, pet) {
             console.log(key, pet);
-
-            $('#container').append("<div class=\"imagecontainer\"><a href=\"\"><img class=\"item\" src="+ pet.imageUrl + "/><div class=\"more-info\"><h3>" + pet.name + "</h3></div></a></div>'");
+            var route = "/" + pet.name;
+            $('#container').append("<div class=\"imagecontainer\"><a href=" + route + "><img class=\"item\" src=" + pet.imageUrl + "/><div class=\"more-info\"><h3>" + pet.name + "</h3></div></a></div>'");
         });
 
 
