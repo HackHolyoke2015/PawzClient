@@ -4,7 +4,7 @@
    http://www.alistapart.com/articles/fluid-images/ 
 */
 img, object, embed, video {
-	max-width: 100%;
+max-width: 100%;
 }
 
 /* IE 6 does not support max-width so default to width 100% */
@@ -84,7 +84,8 @@ img, object, embed, video {
 }
 }
 
-/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+/* Desktop Layout: 769px to a max of 1232px.  
+Inherits styles from: Mobile Layout and Tablet Layout. */
 
 @media only screen and (min-width: 769px) {
 
@@ -110,8 +111,8 @@ img, object, embed, video {
 
 
 
-.item { width: 25%; }
-.item.w2 { width: 50%; }
+/*.item { width: 25%; }
+.item.w2 { width: 50%; }*/
 
 @media only screen and (max-width: 770px) {
 	
@@ -123,6 +124,18 @@ img, object, embed, video {
 
 #tagline{
 	width: 50%;
+  margin: auto;
 	max-width: 770px;
 	display: block;
+}
+
+.more-info {position:absolute}
+
+.imagecontainer {
+	display:inline-block;
+width:25%; 
+vertical-align:top;}
+
+#main-logo{
+	  text-align: center;
 }
