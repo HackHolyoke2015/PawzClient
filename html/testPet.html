@@ -3,39 +3,11 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $.getJSON("/pet", function(result){
-        	
-            $.each(result, function(i, pet){
-                //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
-                var elem = document.createElement("img");
-                //elem.setAttribute("src", pet.imageUrl);
-				elem.src = pet.imageUrl;
-                elem.title = pet.name;
-
-				//var src = $(document).getElementById("header");
-				//src.appendChild(img);
-
-				document.getElementById("placehere").appendChild(elem);
-                var sPageURL = window.location.search.substring(1); 
-                var sURLVariables = sPageURL.split('&'); 
-                for (var i = 0; i < sURLVariables.length; i++) { 
-                    var sParameterName = sURLVariables[i].split('='); 
-                    if (sParameterName[0] == sParam) { 
-                        console.log(sParameterName[1]); 
-                    } 
-                }
-            });
-        });
-    });
-});
-</script>
-<script>
 var param1var = getQueryVariable("id");
+var query;
 
 function getQueryVariable(variable) {
-  var query = window.location.search.substring(1);
+  query = window.location.search.substring(1);
   console.log(query);
   var vars = query.split("&");
   for (var i=0;i<vars.length;i++) {
@@ -46,6 +18,26 @@ function getQueryVariable(variable) {
   } 
   alert('Query Variable ' + variable + ' not found');
 }
+
+$(document).ready(function(){
+    $("button").click(function(){
+        $.getJSON("/pet/:" + query, function(result){
+            
+            $.each(result, function(i, pet){
+                //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
+                var elem = document.createElement("img");
+                //elem.setAttribute("src", pet.imageUrl);
+                elem.src = pet.imageUrl;
+                elem.title = pet.name;
+
+                //var src = $(document).getElementById("header");
+                //src.appendChild(img);
+
+                document.getElementById("placehere").appendChild(elem);
+            });
+        });
+    });
+});
 </script>
 </head>
 <body>
