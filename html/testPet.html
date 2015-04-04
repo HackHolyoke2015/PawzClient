@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.getJSON("/pets", function(result){
+        $.getJSON("/pet", function(result){
         	
             $.each(result, function(i, pet){
                 //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
