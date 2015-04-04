@@ -74,16 +74,16 @@ Do the following if you're using your customized build of modernizr (http://www.
 
 
 <div id="placehere"></div>
-    <script>
-        $.getJSON("/pets", function(result){
-            $.each(results, function (key, pet) {
-                console.log(key, pet);
+<script>
+    $.getJSON("/pets", function(result){
+        $.each(result, function (key, pet) {
+            console.log(key, pet);
 
-                $('#container').append("<div class=\"imagecontainer\"><a href=\"\"><img class=\"item\" src="+ pet.imageUrl + "/><div class=\"more-info\"><h3>" + pet.name + "</h3></div></a></div>'");
-            });
-
-
+            $('#container').append("<div class=\"imagecontainer\"><a href=\"\"><img class=\"item\" src="+ pet.imageUrl + "/><div class=\"more-info\"><h3>" + pet.name + "</h3></div></a></div>'");
         });
-    </script>
+
+
+    });
+</script>
 </body>
 </html>
