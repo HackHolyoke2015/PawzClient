@@ -52,7 +52,8 @@ $.getJSON("/pet/:" + query, function(result){
         elem.src = pet.imageUrl;
         elem.title = pet.name;
 
-        document.getElementById("placehere").appendChild(elem);
+        //document.getElementById("placehere").appendChild(elem);
+        $('#container').append('<div class="imagecontainer"><h1> Hello, I\'m' + pet.name + '!</h1><a href=\"#\" class=\"adoptme\">Adopt Me!</a><img class=\"item\" src="' + pet.imageUrl + '"/>');
     });
 });
 </script>
@@ -67,8 +68,8 @@ $.getJSON("/pet/:" + query, function(result){
 <BR>
 <BR>
 <div id="container">
-<div class="imagecontainer">
-<h1> Hello, I'm Bloop!</h1>
+<!-- <div class="imagecontainer">
+ --><h1> Hello, I'm Bloop!</h1>
 <a href="#" class="adoptme">Adopt Me!</a>
 <BR>
 <BR>
