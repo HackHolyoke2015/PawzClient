@@ -42,19 +42,24 @@ function getQueryVariable(variable) {
   alert('Query Variable ' + variable + ' not found');
 }
 
-$.getJSON("/pet/:" + query, function(result){
-    console.log("Getting JSON");
+ $.getJSON("/pet/:" + query, function (result) {
     console.log(result);
-    $.each(result, function(i, pet){
-        //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
-        var elem = document.createElement("img");
-        //elem.setAttribute("src", pet.imageUrl);
-        elem.src = pet.imageUrl;
-        elem.title = pet.name;
-
-        //document.getElementById("placehere").appendChild(elem);
-        $('#container').append('<div class="imagecontainer"><h1> Hello, I\'m' + pet.name + '!</h1><a href=\"#\" class=\"adoptme\">Adopt Me!</a><img class=\"item\" src="' + pet.imageUrl + '"/>');
-    });
+    var details = '<div class="imagecontainer"><h1> Hello, I\'m' + pet.name + '!</h1><a href=\"#\" class=\"adoptme\">Adopt Me!</a><img class=\"item\" src="' + pet.imageUrl + '"/>'
+    details += '<BR><h2>West Haven Animal Shelter, 29 Forest Road, West Haven, CT, 06467</h2>';
+    details += '<BR> <strong>Name:</strong> Bloop ';
+    details += '<BR><strong>Time in Shelter:</strong> 1 year ';
+    details += '<BR><strong>Age:</strong> About 12 years old ';
+    details += '<BR><strong>Breed: </strong>Terrior mix ';
+    details += '<BR><strong>Medical info:</strong> Neutered; Shots up to date ';
+    details += '<BR><strong>Dog Friendly:</strong> Somewhat ';
+    details += '<BR><strong>Child Friendly: </strong>Not recommended ';
+    details += '<BR><strong>Idea Home:</strong> Older family, family with no children or other dogs. ';
+    details += '<BR><strong>Found:</strong> West Haven, CT ';
+    details += '<BR>';
+    details += '<BR><strong>Story:</strong> Bloop was found wondering the streets of West Haven, CT by Animal Officer Mclow. Bloop was underweight, cold, and hungry seeking only love as Offficer Mclow approached him. Bloop has been in our shelter for about a year looking for a loving  home. Bloop\'s favorite thing to do is cuddle, eat, and get his belly rubbed. An idea home for Bloop would be one with no other dogs, but he loves cats! In addition we would recommend someone who has pet experiance to adopt Bloop.';
+    details += '<BR>';
+    details += '<BR><a href="#" class="adoptme">Adopt Me!</a>';
+    $('#container').append(details);
 });
 </script>
 </head>
@@ -68,28 +73,7 @@ $.getJSON("/pet/:" + query, function(result){
 <BR>
 <BR>
 <div id="container">
-<!-- <div class="imagecontainer">
- --><h1> Hello, I'm Bloop!</h1>
-<a href="#" class="adoptme">Adopt Me!</a>
-<BR>
-<BR>
-	<a href="">
-    <img class="item" src="http://i.imgur.com/R3Slfl4.jpg" alt=""/> </a>
-    <BR><h2>West Haven Animal Shelter, 29 Forest Road, West Haven, CT, 06467</h2>
-   <BR> <strong>Name:</strong> Bloop 
-   <BR><strong>Time in Shelter:</strong> 1 year 
-    <BR><strong>Age:</strong> About 12 years old 
-    <BR><strong>Breed: </strong>Terrior mix 
-    <BR><strong>Medical info:</strong> Neutered; Shots up to date 
-    <BR><strong>Dog Friendly:</strong> Somewhat 
-    <BR><strong>Child Friendly: </strong>Not recommended 
-    <BR><strong>Idea Home:</strong> Older family, family with no children or other dogs. 
-    <BR><strong>Found:</strong> West Haven, CT 
-    <BR>
-    <BR><strong>Story:</strong> Bloop was found wondering the streets of West Haven, CT by Animal Officer Mclow. Bloop was underweight, cold, and hungry seeking only love as Offficer Mclow approached him. Bloop has been in our shelter for about a year looking for a loving  home. Bloop's favorite thing to do is cuddle, eat, and get his belly rubbed. An idea home for Bloop would be one with no other dogs, but he loves cats! In addition we would recommend someone who has pet experiance to adopt Bloop.
-    <BR>
-    <BR><a href="#" class="adoptme">Adopt Me!</a>
-   
+
 <body>
 	<div class="gridContainer clearfix">
 		
