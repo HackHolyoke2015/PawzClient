@@ -24,6 +24,38 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script src="respond.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+var param1var = getQueryVariable("id");
+var query;
+
+function getQueryVariable(variable) {
+  query = window.location.search.substring(1);
+  console.log(query);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  } 
+  alert('Query Variable ' + variable + ' not found');
+}
+
+$.getJSON("/pet/:" + query, function(result){
+    console.log("Getting JSON");
+    console.log(result);
+    $.each(result, function(i, pet){
+        //$("div").append("(" + pet.name + ", " + pet.imageUrl + ") ");
+        var elem = document.createElement("img");
+        //elem.setAttribute("src", pet.imageUrl);
+        elem.src = pet.imageUrl;
+        elem.title = pet.name;
+
+        document.getElementById("placehere").appendChild(elem);
+    });
+});
+</script>
 </head>
 <body bgcolor="#FFFFFF" text="#000000" alink="#000000">
 <BR>
@@ -61,5 +93,6 @@ Do the following if you're using your customized build of modernizr (http://www.
 	<div class="gridContainer clearfix">
 		
 	</div>
+    <div id="placehere"></div>
 </body>
 </html>
