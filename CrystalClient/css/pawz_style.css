@@ -1,0 +1,84 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight:bold;
+  line-height: 1.42857143;
+}
+
+
+/*home nav*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active> {
+	color:#73E5C2;
+	background-color:#9d9d9d;
+	padding: 6px 12px;
+	margin-top: 6px;
+  	margin-bottom: 0;
+}
+
+
+/*PAWZ brand*/
+.navbar-inverse .navbar-brand {color:#9d9d9d;
+
+}
+
+
+/*hh*/
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 6px 12px;
+}
+
+/*about nav*/
+li a {color:#9d9d9d;
+	background-color:#73E5C2;
+	margin-top: 6px;
+  	margin-bottom: 0;
+  	margin-right:15px;
+}
+
+a:hover {color:#000000;
+
+}
+
+/*border color/padding*/
+.navbar-inverse {
+  border: 1px solid;
+  border-color: #73E5C2;
+}
+
+/*nav buttons background color*/
+ul {
+	color:#9d9d9d;
+
+}
+
+a:hover {color:#000000;
+}
+
+/*search bar*/
+.form-group {margin-top: -2px;
+  	font-size: 15px;
+
+}
+
+
+/*search button*/
+.btn-default {color:#9d9d9d;
+	font-weight:bold;
+	background-color:#73E5C2;
+}
+
+a button:hover {color:#000000;
+	background-color: #ffffff;
+
+}
+
+#us {font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	 font-size: 15px;
+  	font-weight:bold;
+
+
+}
+
+
